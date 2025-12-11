@@ -1,0 +1,180 @@
+{
+    "openapi": "3.0.4",
+    "info": {
+        "version": "0.0.1",
+        "title": "RevYou web application",
+        "description": "gotkgotk"
+    },
+    "paths": {
+        "/api/games": {
+            "get": {
+                "summary": "Obtém todos os jogos eletrônicos cadastrados",
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Obtém todos os jogos eletrônicos cadastrados",
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/games/{id}": {
+            "put": {
+                "summary": "Obtém todos os jogos eletrônicos cadastrados",
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Game"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "description": "Game ID",
+                    "required": true,
+                    "schema": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }],
+                "requestBody": {
+                    "description": "jgitjnibodjobjot",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Game"
+                            }      
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Obtém todos os jogos eletrônicos cadastrados",
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "description": "Game ID",
+                    "required": true,
+                    "schema": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }]
+            },
+            "get": {
+                "summary": "Obtém um jogo eletrônico pelo seu ID",
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Game"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "description": "Game ID",
+                    "required": true,
+                    "schema": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }]
+            }
+        },
+        "/api/post": {
+            "get": {
+                "summary": "Obtém todos os jogos eletrônicos cadastrados",
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Obtém todos os jogos eletrônicos cadastrados",
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        } 
+    },
+    "components": {
+        "schemas": {
+            "Game": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "style": {
+                        "type": "string"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tag"
+                        }
+                    }
+                },
+                "required": ["id", "name"]
+            },
+            "Tag": {
+                "type": "string"
+            }
+        }
+    }
+}
